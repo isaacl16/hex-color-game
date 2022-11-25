@@ -61,6 +61,7 @@ function App() {
       <div className="button-group">
         {colors.map((color) => (
           <button
+            key={color}
             onClick={() => onClickOption(color)}
             disabled={currentStatus === "correct"}
           >
@@ -74,10 +75,8 @@ function App() {
   const renderStatus = () => {
     return (
       <p
-        styles={
-          currentStatus === "correct"
-            ? { backgroundColor: "green" }
-            : { backgroundColor: "red" }
+        style={
+          currentStatus === "correct" ? { color: "green" } : { color: "red" }
         }
       >
         {status[currentStatus]}
